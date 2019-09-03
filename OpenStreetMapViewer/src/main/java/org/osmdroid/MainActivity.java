@@ -68,6 +68,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
+                
+		
+		getLastKnownLocation(pLocationManager, LocationManager.NETWORK_PROVIDER);
                 this.startActivity(new Intent(this, StarterMapActivity.class));
                 break;
             case 1:
