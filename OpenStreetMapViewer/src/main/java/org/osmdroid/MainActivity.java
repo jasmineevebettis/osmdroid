@@ -50,20 +50,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setSupportActionBar(myToolbar);
         // Generate a ListView with Sample Maps
         final ArrayList<String> list = new ArrayList<>();
-        list.add("OSMDroid Sample map (Start Here)");
-        list.add("OSMapView with Minimap, ZoomControls, Animations, Scale Bar and MyLocationOverlay");
-        list.add("OSMapView with ItemizedOverlay");
-        list.add("OSMapView with Minimap and ZoomControls");
-        list.add("Sample with tiles overlay");
-        list.add("Sample with tiles overlay and secondary tile overlay");
-        list.add("More Samples");
-
-        list.add("Report a bug");
-        list.add("Settings");
-        list.add("Bug Drivers");
-        list.add("Diagnostics");
-        list.add("View the intro again");
-        list.add("Licenses");
+        list.add("Choose your pickup location");
+        list.add("Choose your destination");
+        
         if (BuildConfig.VERSION_CODE >= 11)
             list.add("Cache Analyzer");
 
@@ -84,61 +73,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 1:
                 this.startActivity(new Intent(this, SampleExtensive.class));
                 break;
-            case 2:
-                this.startActivity(new Intent(this, SampleWithMinimapItemizedoverlay.class));
-                break;
-            case 3:
-                this.startActivity(new Intent(this, SampleWithMinimapZoomcontrols.class));
-                break;
-            case 4:
-                this.startActivity(new Intent(this, SampleWithTilesOverlay.class));
-                break;
-            case 5:
-                this.startActivity(new Intent(this, SampleWithTilesOverlayAndCustomTileSource.class));
-                break;
-            case 6:
-                this.startActivity(new Intent(this, ExtraSamplesActivity.class));
-                break;
-            case 7:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/osmdroid/osmdroid/issues/new"));
-                startActivity(browserIntent);
-                break;
-            case 8:{
-                Intent i = new Intent(this,PreferenceActivity.class);
-                startActivity(i);
-            }
-                break;
-            case 9:
-                this.startActivity(new Intent(this, BugsTestingActivity.class));
-                break;
-            case 10:
-                this.startActivity(new Intent(this, DiagnosticsActivity.class));
-                break;
-            case 11:
-            {
-                //skip this nonsense
-                SharedPreferences.Editor edit = PreferenceManager.getDefaultSharedPreferences(this).edit();
-                edit.remove("osmdroid_first_ran");
-                edit.commit();
-
-                Intent intent = new Intent(this, IntroActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-            }
-            case 12:{
-                Intent i = new Intent(this,LicenseActivity.class);
-                startActivity(i);
-                break;
-            }
-            case 13:
-            {
-                if (BuildConfig.VERSION_CODE >= 11){
-                    Intent starter = new Intent(this,CacheAnalyzerActivity.class);
-                    startActivity(starter );
-                    break;
-                }
-            }
+            
+                
         }
     }
 
